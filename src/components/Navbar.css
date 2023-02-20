@@ -1,0 +1,117 @@
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+	max-width: 1200px;
+    background-color: #000;
+    position: sticky;
+    top: 0;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-list li {
+    list-style: none;
+    padding: 0 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+	font-weight: 500;
+	letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: aliceblue;
+    transition: 0.2s ease-in-out;
+}
+
+.nav-links:hover {
+    color: #b70d32;
+    transform: scale(1.2);
+    text-decoration: underline;
+    transition: all 0.3s ease;
+}
+
+.nav-links {
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.activated {
+    color: #b70d32;
+}
+
+.logo {
+    width: 175px;
+    height: 52px;
+    margin-left: 3px;
+}
+
+@media screen and (max-width: 960px) {
+    .Navbar {
+        width: 100vw;
+        max-width: 1200px;
+        background-color: #000;
+        position: sticky;
+        top: 0;
+    }
+
+    .logo {
+        width: 170px;
+        height: 50px;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 56px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .nav-list.active {
+        background: #000;
+        left: 0;
+        opacity: 1;
+        transition: all 0.6s ease;
+        z-index: 1;
+    }
+
+    .nav-links {
+        text-align: center;
+        padding: 1rem;
+        width: 100%;
+        display: table;
+      }
+    
+      .nav-links:hover {
+        color: #b70d32;
+        transform: scale(1.2);
+        transition: all 0.3s ease;
+      }
+
+      .menu-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 40%);
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+}
