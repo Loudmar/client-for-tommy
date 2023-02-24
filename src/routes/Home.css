@@ -1,0 +1,71 @@
+.home {
+    height: 100%;
+    width: 100%;
+    background-repeat: repeat-y;
+    background-position: center;
+    background-size: cover;
+}
+
+.home-bg {
+    background-image: url('../../public/project-bg.svg');
+}
+
+.home-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .home-svg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 300px;
+    width: 300px;
+    z-index: 2;
+  }
+  
+  .home-welcome {
+    font-size: clamp(.5rem, 5vw + 1rem, 3rem);
+    margin-top: 15px;
+    color: white;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+  }
+  
+  .home-poesia {
+    font-size: clamp(1rem, 4vw + 1rem, 2rem);
+    color: white;
+    text-transform: uppercase;
+    position: fixed;
+    margin-bottom: 170px;
+    z-index: 3;
+  }
+  
+  .path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: dash 8s linear alternate infinite;
+  }
+  
+  @keyframes dash {
+    from {
+      stroke-dashoffset: 1;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @media screen and (min-width: 960px) {
+    .home-svg {
+      height: 360px;
+      width: 360px;
+    }
+    .home-poesia {
+      font-size: clamp(1rem, 4vw + 1rem, 2.5rem);
+    }
+  }
