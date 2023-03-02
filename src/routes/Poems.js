@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 function Poems() {
   return (
-    <div className='poems'>
+    <div className='poems poems-bg'>
       <h1>Poems</h1>
     </div>
   )

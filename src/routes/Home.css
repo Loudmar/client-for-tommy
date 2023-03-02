@@ -1,5 +1,5 @@
 .home {
-    height: 100%;
+    height: 100vh;
     width: 100%;
     background-repeat: repeat-y;
     background-position: center;
@@ -24,11 +24,10 @@
     flex-direction: column;
     height: 300px;
     width: 300px;
-    z-index: 2;
   }
   
   .home-welcome {
-    font-size: clamp(.5rem, 5vw + 1rem, 3rem);
+    font-size: clamp(.5rem, 5vw + 1rem, 2.5rem);
     margin-top: 15px;
     color: white;
     margin-bottom: 0;
@@ -40,15 +39,18 @@
     font-size: clamp(1rem, 4vw + 1rem, 2rem);
     color: white;
     text-transform: uppercase;
-    position: fixed;
-    margin-bottom: 170px;
-    z-index: 3;
+    position: absolute;
+    margin-bottom: 210px;
   }
   
   .path {
     stroke-dasharray: 1;
     stroke-dashoffset: 1;
     animation: dash 8s linear alternate infinite;
+  }
+
+  .home-footer {
+    height: 13px;
   }
   
   @keyframes dash {
@@ -61,11 +63,31 @@
   }
   
   @media screen and (min-width: 960px) {
+    .home-container {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
     .home-svg {
+      margin-top: 15px;
       height: 360px;
       width: 360px;
     }
     .home-poesia {
-      font-size: clamp(1rem, 4vw + 1rem, 2.5rem);
+      font-size: clamp(1rem, 4vw + 1rem, 3rem);
+      margin-top: 15px;
+      margin-right: -230px;
+      margin-bottom: 320px;
+    }
+
+    .home-welcome {
+      font-size: clamp(.5rem, 5vw + 1rem, 3rem);
+      position: absolute;
+      margin-left: -405px;
+      margin-bottom: 320px;
+    }
+    .home-footer {
+      height: 0px;
     }
   }
