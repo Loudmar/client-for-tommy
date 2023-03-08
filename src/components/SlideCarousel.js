@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import 'swiper/swiper-bundle.css';
 import "./SlideCarousel.css";
 
-// import required modules
 import { EffectCoverflow, Pagination, Scrollbar, Navigation, Mousewheel, A11y } from "swiper";
 
 function SlideCarousel() {

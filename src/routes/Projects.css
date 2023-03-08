@@ -7,7 +7,7 @@
 }
 
 .projects-bg {
-    background-image: url('../../public/project-bg.svg');
+    background-image: url('../../public/about-bg.svg');
 }
 
 .author-img {
@@ -41,7 +41,7 @@
     margin-top: 25px;
 }
 
-h3 {
+.project-container h3 {
     margin-top: 15px;
 }
 
