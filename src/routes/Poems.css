@@ -27,6 +27,27 @@
     padding: 0 5px;
 }
 
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 550px;
+    padding: 15px;
+}
+
+.search-container input {
+    height: 1.9rem;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.search-container svg {
+    margin-right: 5px;
+    font-size: 1.5rem;
+}
+
 .collapse-container {
     display: flex;
     align-items: center;
