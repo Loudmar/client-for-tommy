@@ -5,6 +5,7 @@ import About from "./routes/About";
 import Poems from "./routes/Poems";
 import Projects from "./routes/Projects";
 import Contact from "./routes/Contact";
+import Login from "./routes/Login";
 import Missing from "./routes/Missing";
 
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="poems" element={<Poems />} />
         <Route path="projects" element={<Projects />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="login" element={<Login />} />
         <Route path='*' element={<Missing />} />
       </Route>
     </Routes>

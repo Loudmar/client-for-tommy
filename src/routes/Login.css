@@ -1,0 +1,25 @@
+.login-container {
+    color: whitesmoke;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.login-container form input {
+    height: 20px;
+    border-radius: 5px;
+    margin: 3px;
+}
+  
+.login-container form button {
+    margin: 5px;
+    cursor: pointer;
+}
+  
+.login-container form button:hover {
+    transform: scale(1.1);
+    background-color: lightblue;
+}
+  
