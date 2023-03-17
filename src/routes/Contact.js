@@ -105,9 +105,9 @@ function Contact() {
             </div>
           </form>
         </div>
-      </div>
-      <div className='contact-admin'>
+        <div className='contact-admin'>
         <a href='login'><FaGlasses /></a>
+        </div>
       </div>
     </div>
   )

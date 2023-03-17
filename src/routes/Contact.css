@@ -119,4 +119,5 @@ form:focus-within {
   bottom: 0;
   margin-right: 15px;
   opacity: 0.5;
+  color: whitesmoke;
 }

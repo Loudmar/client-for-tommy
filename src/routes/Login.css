@@ -7,15 +7,30 @@
     flex-direction: column;
 }
 
+.login-container form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
 .login-container form input {
-    height: 20px;
+    height: 30px;
     border-radius: 5px;
     margin: 3px;
+}
+
+.login-button-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
   
 .login-container form button {
     margin: 5px;
     cursor: pointer;
+    padding: 3px;
 }
   
 .login-container form button:hover {

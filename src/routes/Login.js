@@ -2,12 +2,9 @@ import React from 'react'
 import { useState } from "react";
 import './Login.css';
 
-//username: kminchelle
-//password: 0lelplR
-
 function Login() {
 
-  const [username, setUsername] = useState("");
+  const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleUsername = (e) => {
@@ -21,20 +18,29 @@ function Login() {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch('https://dummyjson.com/auth/login', {
+    const response = await fetch('http://localhost:3300/auth', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ username, password }),
+      body: JSON.stringify({ userName, password }),
+      credentials: 'include',
     });
 
     if (response.ok) {
       const data = await response.json();
-      document.cookie = `token=${data.token}; path=/;`
+      document.cookie = `token=${data.accessToken}; path=/;`;
+      document.cookie = `refreshToken=${data.refreshToken}; path=/;`;
+      window.location.href = '/home';
+      //console.log(data);
     } else {
-      console.log('Authentication failed');
+      console.log('Login failed');
     }
+  }
+
+  const handleClearForm = () => {
+    setUsername("");
+    setPassword("");
   }
     
 
@@ -46,7 +52,7 @@ function Login() {
           <input
             type="text"
             id="username"
-            value={username}
+            value={userName}
             onChange={handleUsername}
           />
         </div>
@@ -59,7 +65,10 @@ function Login() {
             onChange={handlePassword}
           />
         </div>
-        <button type="submit">Log in</button>
+        <div className='login-button-form'>
+          <button type="submit" onClick={handleLoginSubmit}>Log in</button>
+          <button type="button" onClick={handleClearForm}>Cancel</button>
+        </div>
       </form>
     </div>
   )
