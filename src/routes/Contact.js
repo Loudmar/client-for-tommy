@@ -48,7 +48,7 @@ function Contact() {
                 placeholder="Enter your full name" 
                 id="name" 
                 name="name" 
-                minlength="3" 
+                minLength="3" 
                 tabIndex="1"
                 ref={nameRef}
                 required 
@@ -88,7 +88,7 @@ function Contact() {
                 id="message" 
                 name="message"
                 placeholder="How may I help you?" 
-                minlength="15"
+                minLength="15"
                 tabIndex="4"
                 ref={messageRef}
               >            

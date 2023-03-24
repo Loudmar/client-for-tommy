@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FaArrowDown, FaArrowUp, FaSistrix } from 'react-icons/fa';
 import './Poems.css';
 
-function Poems() {
+function Poems({ isLoggedIn }) {
 
   const [data, setData] = useState([]);
   const [selected, setSelected] = useState(null);
@@ -47,13 +47,14 @@ function Poems() {
       </div>
       <div className="collapse">
         {filteredPosts.map((post, i) => (
-          <div className="collapse-item">
+          <div className="collapse-item" key={post.id}>
             <div className="collapse-title" onClick={() => toggle(i)}>
               <h3>{post.title}</h3>
               <span>{selected === i ? <FaArrowUp /> : <FaArrowDown />}</span>
             </div>
             <div className={selected === i ? "collapse-body show" : "collapse-body"}>
               <p>{post.body}</p>
+              {isLoggedIn? <button type='button'>Edit</button> : null}
             </div>
           </div>
         ))}

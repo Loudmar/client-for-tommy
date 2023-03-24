@@ -10,12 +10,16 @@ import Missing from "./routes/Missing";
 
 
 function App() {
+
+  const isLoggedIn = document.cookie.includes("token");
+  //console.log(isLoggedIn); useffect to handle to avoid reload. 
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
-        <Route path="poems" element={<Poems />} />
+        <Route path="poems" element={<Poems isLoggedIn={isLoggedIn} /> } /> 
         <Route path="projects" element={<Projects />} />
         <Route path="contact" element={<Contact />} />
         <Route path="login" element={<Login />} />

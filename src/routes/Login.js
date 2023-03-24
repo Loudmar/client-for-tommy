@@ -1,11 +1,13 @@
 import React from 'react'
 import { useState } from "react";
+import { FaEyeSlash, FaEye } from 'react-icons/fa'
 import './Login.css';
 
 function Login() {
 
   const [userName, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordType, setPasswordType] = useState('password');
 
   const handleUsername = (e) => {
     setUsername(e.target.value);
@@ -31,8 +33,8 @@ function Login() {
       const data = await response.json();
       document.cookie = `token=${data.accessToken}; path=/;`;
       document.cookie = `refreshToken=${data.refreshToken}; path=/;`;
-      window.location.href = '/home';
-      //console.log(data);
+      //window.location.href = '/';
+      console.log(data);
     } else {
       console.log('Login failed');
     }
@@ -41,6 +43,14 @@ function Login() {
   const handleClearForm = () => {
     setUsername("");
     setPassword("");
+  }
+
+  const togglePassword = () => {
+    if (passwordType === 'password') {
+      setPasswordType('text')
+      return;
+    }
+    setPasswordType('password')
   }
     
 
@@ -59,11 +69,15 @@ function Login() {
         <div>
           <label htmlFor="password">Password:</label>
           <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={handlePassword}
-          />
+          type={passwordType}
+          id="password"
+          name="password"
+          value={password}
+          onChange={handlePassword}
+        />
+        <span className="password-icon" onClick={togglePassword}>
+          { passwordType === 'password'? <FaEye /> : <FaEyeSlash /> }
+        </span>
         </div>
         <div className='login-button-form'>
           <button type="submit" onClick={handleLoginSubmit}>Log in</button>
